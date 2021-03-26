@@ -2,5 +2,17 @@ import java.util.*;
 
 
 class SinglyLinkedListNode {
-   
+    static Scanner s = new Scanner(System.in);
+   public static void main(String[] args) {
+       int x = 97;char ch;
+       for (int i = 0; i < 5; ++i) {
+           System.out.println(i);
+       }
+       int i = 0;
+       while(i<5){
+
+        System.out.println(i);
+           ++i;
+       }
+   }
 }
