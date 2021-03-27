@@ -2,7 +2,10 @@ package DynamicProgramming;
 
 class TargetSum {
     public int findTargetSumWays(int[] nums, int S) {
-        if(S>1000) return 0;
+        if(S>1000) 
+            return 0;
+        //to avoid overflow.
+
         int n = nums.length;
         int X = 0;
         for(int i:nums)X+=i;
