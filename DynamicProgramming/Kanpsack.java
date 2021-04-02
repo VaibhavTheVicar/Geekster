@@ -7,10 +7,12 @@ public class Kanpsack {
         int n = sc.nextInt();
         int val[]= new int[n];
         int wt[] = new int[n];
+
         for (int i = 0; i < n; i++)
             val[i] = sc.nextInt();
         for (int i = 0; i < n; i++)
             wt[i] = sc.nextInt();
+        
         System.out.println(solve(W,n,wt,val));
     }
 
@@ -26,11 +28,15 @@ public class Kanpsack {
 
         if(wt[n-1]>W)
             {int a = solve(W,n-1,wt,val);
+            
             h.put(List.of(n,W),a);
             return a;}
 
         else
-            {int a = Math.max(solve(W,n-1,wt,val),val[n-1] + solve(W-wt[n-1],n-1,wt,val));
+            {
+                int a = solve(W,n-1,wt,val);
+                int b = val[n-1] + solve(W-wt[n-1],n-1,wt,val);
+                if(b>a){a = b;}
             h.put(List.of(n,W),a);
             return a;}
     }
